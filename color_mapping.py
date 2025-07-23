@@ -76,3 +76,11 @@ MATERIAL_IDS = {
     'aluminum': 7,
     'empty': 0  # Background/empty space
 } 
+# Extended material palette for high-res devices
+ADVANCED_MATERIALS = {
+    "tungsten": (100, 100, 120),
+    "tungsten_silicide": (90, 90, 110),
+    "silicon_nitride": (210, 230, 255),
+    "low_k_dielectric": (195, 215, 245),
+    "copper": (184, 115, 51),
+}
