@@ -710,3 +710,12 @@ if __name__ == "__main__":
     else:
         print(f"Test image not found: {test_image_path}")
         print("Please provide a valid input image path for testing")
+
+def validate_workflow_steps(steps):
+    """Ensure step ordering is physically valid (e.g., etch before clean)."""
+    required_order = ["deposition", "lithography", "etch", "clean"]
+    positions = {s: next((i for i, step in enumerate(steps) if s in step.lower()), -1)
+                 for s in required_order}
+    return all(positions[required_order[i]] < positions[required_order[i+1]]
+               for i in range(len(required_order)-1)
+               if positions[required_order[i]] != -1 and positions[required_order[i+1]] != -1)
