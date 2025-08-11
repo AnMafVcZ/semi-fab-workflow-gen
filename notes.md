@@ -4,3 +4,4 @@
 ## Jul 24 — color_mapping.py first pass done
 ## Jul 30 — wafer image generator working
 ## Aug 5 — integrate YOLO detection into pipeline
+## Aug 11 — fix synthetic dataset label format
