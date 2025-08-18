@@ -5,3 +5,4 @@
 ## Jul 30 — wafer image generator working
 ## Aug 5 — integrate YOLO detection into pipeline
 ## Aug 11 — fix synthetic dataset label format
+## Aug 18 — improve material classification accuracy
