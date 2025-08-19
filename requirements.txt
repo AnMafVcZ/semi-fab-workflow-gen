@@ -11,4 +11,6 @@ matplotlib>=3.7.0
 pandas>=2.0.0
 
 # File and Data Handling
-pathlib2>=2.3.0 
+pathlib2>=2.3.0 # Pinned for reproducibility
+pillow==10.3.0
+numpy==1.26.4
