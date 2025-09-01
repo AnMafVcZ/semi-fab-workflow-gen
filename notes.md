@@ -7,3 +7,4 @@
 ## Aug 11 — fix synthetic dataset label format
 ## Aug 18 — improve material classification accuracy
 ## Aug 25 — add process node scaling logic
+## Sep 1 — workflow ordering validation added
