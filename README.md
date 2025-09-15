@@ -111,3 +111,8 @@ Just run `./gemini_cli_workflow.sh` and describe your semiconductor device!
 ---
 
 **Note**: This system solves the original JSON generation loop errors by using a two-step approach that separates workflow generation from image creation.
+## Limitations
+
+- YOLO model accuracy degrades on novel device geometries not in training set
+- Workflow ordering heuristics assume standard CMOS flow; III-V and MEMS may need manual review
+- Image generation works best on cross-sectional views; top-down SEM images need preprocessing
