@@ -9,3 +9,4 @@
 ## Aug 25 — add process node scaling logic
 ## Sep 1 — workflow ordering validation added
 ## Sep 8 — CLI interface polished
+## Sep 15 — cleanup and final testing
