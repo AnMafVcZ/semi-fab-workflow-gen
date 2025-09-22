@@ -10,3 +10,4 @@
 ## Sep 1 — workflow ordering validation added
 ## Sep 8 — CLI interface polished
 ## Sep 15 — cleanup and final testing
+## Sep 22 — add requirements and env example
