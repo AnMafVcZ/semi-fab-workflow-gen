@@ -1,80 +1,113 @@
 # Semiconductor Fabrication Workflow Generator
 
-This repository helps you generate semiconductor fabrication workflows using Gemini CLI. Give it a final device image and some design notes, and it'll analyze the image, map colors to materials, and output a complete fabrication workflow with specific tools.
+Generate realistic semiconductor fabrication workflows and step-by-step wafer images using AI.
 
-## What this does
-
-- Uses Gemini CLI to analyze device images and generate fabrication flows
-- Only uses tools from your `Tools_list.csv` 
-- Maps image colors to materials using `color_mapping.py`
-- The `wafer_training_data/` folder just has example images for reference
-
-## Project Structure
-
-```
-Semi/
-├── README.md
-├── Tools_list.csv                 # Your available tools
-├── color_mapping.py               # Color to material mapping
-├── prompt_fabrication_workflow.txt# Gemini prompt
-├── input_images/                  # Put device images here
-└── wafer_training_data/           # Example images only
-```
-
-## Getting Started
-
-1. Install and set up Gemini CLI
-2. Put your device image(s) in `input_images/` 
-3. Check that `Tools_list.csv` and `color_mapping.py` match your setup
-4. Run Gemini with the prompt and files:
+## 🚀 Quick Start
 
 ```bash
-gemini \
-  --model gemini-1.5-pro \
-  --prompt "$(cat prompt_fabrication_workflow.txt)" \
-  --all-files
+./gemini_cli_workflow.sh
 ```
 
-You'll get back a numbered fabrication workflow with tool selections, materials, and a visual diagram.
+Then follow the prompts to describe your device and generate the workflow!
 
-**Note**: Put your device images in the `input_images/` folder before running the command. Gemini will see all files in the workspace with `--all-files`.
+## 📋 What It Does
 
-## What Gemini sees
+1. **Generates fabrication workflows** for any semiconductor device
+2. **Creates step-by-step wafer images** showing the fabrication process
+3. **Uses realistic tools and materials** from actual semiconductor fabrication
+4. **Provides comprehensive output** with both text and visual results
 
-- Device images from `input_images/`
-- Tool list from `Tools_list.csv` 
-- Color mapping from `color_mapping.py`
-- Your text notes about materials and design
+## 🎯 Examples
 
-## Key files
+### Simple Device
+**Input**: "Semiconductor device with metal contacts and oxide layer"
 
-- `Tools_list.csv`: Lists all available tools. Gemini only picks from here.
-- `color_mapping.py`: Maps image colors to materials (Si, SiO2, Si3N4, Ti, Cu, Au, Al, empty)
-- `wafer_training_data/`: Example images showing typical wafer structures
+**Output**:
+- 5-step fabrication workflow using simpler tools
+- Step-by-step wafer images showing layer evolution
+- Final device structure visualization
 
-## The prompt
+### Complex Device  
+**Input**: "High-resolution semiconductor device with sub-100nm features"
 
-The full prompt is in `prompt_fabrication_workflow.txt`. It tells Gemini to:
+**Output**:
+- 5-step fabrication workflow using advanced tools
+- Step-by-step wafer images showing layer evolution
+- Final device structure visualization
 
-- Analyze the device image
-- Pick tools only from your list
-- Generate numbered fabrication steps
-- Include materials at each step
-- Create a visual workflow diagram
-- Skip exact process parameters (no times, temperatures, etc.)
+## 📁 Files
 
-## What you get back
+- `gemini_cli_workflow.sh` - Main script (run this!)
+- `gemini_workflow_interface.py` - Image generation engine
+- `color_mapping.py` - Material definitions
+- `Tools_list.csv` - Available fabrication tools
+- `GEMINI.md` - Technical documentation for AI
 
-- Numbered fabrication steps with process names and purposes
-- Tool selections from your list only
-- Materials used at each step
-- Visual diagram showing the workflow
+## 🔧 Setup
 
-## Example images
+1. **Install Gemini CLI**:
+   ```bash
+   brew install google-gemini-cli
+   ```
 
-The `wafer_training_data/` folder has example wafer images and metadata. These are just for reference to show what typical wafers look like.
+2. **Install Python dependencies**:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
+
+3. **Make script executable**:
+   ```bash
+   chmod +x gemini_cli_workflow.sh
+   ```
+
+## 🎓 Usage
+
+### Interactive Mode
+```bash
+./gemini_cli_workflow.sh
+```
+
+### Command Line Mode
+```bash
+# Simple device - uses simpler tools
+./gemini_cli_workflow.sh -d "Semiconductor device with metal contacts and oxide layer"
+
+# Complex device - uses advanced tools  
+./gemini_cli_workflow.sh -d "High-resolution semiconductor device with sub-100nm features"
+```
+
+### With Custom Options
+```bash
+./gemini_cli_workflow.sh -d "Optoelectronic device with transparent electrode" -n opto_device -i my_wafer.png
+```
+
+## 📊 Output
+
+```
+generated_workflows/
+└── device_workflow.txt          # Your fabrication workflow
+
+gemini_workflows/
+└── device_name/                 # Step-by-step images
+    ├── step_001_substrate.png
+    ├── step_002_deposition.png
+    ├── ...
+    ├── final_wafer.png
+    └── workflow_summary.json
+```
+
+## 🔍 Troubleshooting
+
+- **Permission denied**: `chmod +x gemini_cli_workflow.sh`
+- **Gemini CLI not found**: `brew install google-gemini-cli`
+- **Python errors**: Activate virtual environment with `source venv/bin/activate`
+
+## 🚀 Ready to Use!
+
+Just run `./gemini_cli_workflow.sh` and describe your semiconductor device!
 
 ---
 
-**Status**: Ready to use with Gemini CLI  
-**Updated**: August 2025
+**Note**: This system solves the original JSON generation loop errors by using a two-step approach that separates workflow generation from image creation.

@@ -55,4 +55,35 @@ Thumbs.db
 
 # Temporary files
 *.tmp
-*.temp 
+*.temp
+
+# Workflow output directories
+example_output/
+gemini_workflows/
+workflow_output/
+simple_workflow_output/
+realistic_workflow_output/
+test_workflow/
+
+# Test outputs
+test_*/
+*_test_*/
+
+# Temporary Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json 
